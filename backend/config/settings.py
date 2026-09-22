@@ -15,7 +15,7 @@ DEBUG = os.getenv("DEBUG", "False").lower() == "true"
 ALLOWED_HOSTS = [
     "127.0.0.1",
     "localhost",
-    "https://ai-resume-analyzer-backend-jjav.onrender.com",
+    "ai-resume-analyzer-backend-jjav.onrender.com",
 ]
 
 CORS_ALLOW_CREDENTIALS = True
