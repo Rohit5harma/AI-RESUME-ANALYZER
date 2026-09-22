@@ -15,14 +15,13 @@ DEBUG = os.getenv("DEBUG", "False").lower() == "true"
 ALLOWED_HOSTS = [
     "127.0.0.1",
     "localhost",
-    ".vercel.app",
 ]
 
 CORS_ALLOW_CREDENTIALS = True
+
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
     "http://127.0.0.1:5173",
-    "https://ai-resume-analyzer-nine-rust.vercel.app",
 ]
 
 CSRF_TRUSTED_ORIGINS = [
@@ -95,7 +94,7 @@ AUTH_PASSWORD_VALIDATORS = [
         "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",
     },
     {
-        "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
+        "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
     },
 ]
 
@@ -144,10 +143,11 @@ SIMPLE_JWT = {
 }
 
 ACCOUNT_LOGIN_METHODS = {"email"}
+
 ACCOUNT_SIGNUP_FIELDS = [
     "email*",
     "password1*",
 ]
 
-LOGIN_REDIRECT_URL = "http://localhost:5173/dashboard"
-LOGOUT_REDIRECT_URL = "http://localhost:5173/login"
+LOGIN_REDIRECT_URL = "/dashboard"
+LOGOUT_REDIRECT_URL = "/login"
