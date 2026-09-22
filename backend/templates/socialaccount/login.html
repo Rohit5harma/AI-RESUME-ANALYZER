@@ -1,0 +1,122 @@
+{% load i18n %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Continue with {{ provider.name }} | ResumeAI</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="min-h-screen bg-[#f8fafc] flex flex-col items-center justify-center p-4 font-sans">
+
+    <div class="w-full max-w-md bg-white p-8 rounded-2xl border border-gray-100 shadow-sm">
+
+        <!-- Logo -->
+        <div class="flex justify-center mb-6">
+            <div class="w-12 h-12 bg-black rounded-xl flex items-center justify-center">
+                <span class="text-white font-bold text-lg">
+                    AI
+                </span>
+            </div>
+        </div>
+
+        <!-- Heading -->
+        <div class="text-center mb-8">
+
+            <h1 class="text-3xl font-bold text-gray-900 tracking-tight">
+                Continue with {{ provider.name }}
+            </h1>
+
+            <p class="text-sm text-gray-500 mt-2">
+                Sign in to your ResumeAI account using
+                {{ provider.name }}.
+            </p>
+
+        </div>
+
+        <!-- OAuth Information -->
+        <div class="bg-gray-50 border border-gray-100 rounded-xl p-4 mb-6">
+
+            <div class="flex items-center gap-3">
+
+                <div class="w-10 h-10 bg-white rounded-lg border border-gray-200 flex items-center justify-center">
+                    {% if provider.name == "LinkedIn" %}
+                        <span class="font-bold text-blue-700 text-lg">in</span>
+                    {% elif provider.name == "Google" %}
+                        <span class="font-bold text-gray-700 text-lg">G</span>
+                    {% else %}
+                        <span class="font-bold text-gray-700 text-lg">🔐</span>
+                    {% endif %}
+                </div>
+
+                <div>
+                    <p class="text-sm font-semibold text-gray-800">
+                        {{ provider.name }}
+                    </p>
+
+                    <p class="text-xs text-gray-500">
+                        Secure third-party authentication
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Continue Form -->
+        <form method="post">
+
+            {% csrf_token %}
+
+            {% if form %}
+                {{ form.as_p }}
+            {% endif %}
+
+            <button
+                type="submit"
+                class="w-full bg-black text-white font-bold py-3.5 px-4 rounded-xl
+                       hover:bg-zinc-900 transition-colors text-sm"
+            >
+                Continue with {{ provider.name }}
+            </button>
+
+        </form>
+
+        <!-- Back -->
+        <div class="text-center mt-6">
+
+            <a
+                href="/login"
+                class="text-sm font-semibold text-gray-500 hover:text-gray-900 transition"
+            >
+                ← Back to Login
+            </a>
+
+        </div>
+
+        <!-- Footer -->
+        <div class="flex justify-center gap-6 text-xs text-gray-400 mt-10 pt-6 border-t border-gray-50">
+
+            <a href="#" class="hover:text-gray-600">
+                Privacy Policy
+            </a>
+
+            <a href="#" class="hover:text-gray-600">
+                Terms of Service
+            </a>
+
+            <a href="#" class="hover:text-gray-600">
+                Support
+            </a>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
