@@ -87,21 +87,34 @@ export const apiFetch = async (url, options = {}) => {
 
   return response;
 };
-
 // API Service Functions
+
 export const loginUser = async (email, password) => {
   const response = await fetch(`${API_BASE_URL}/api/login/`, {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ email, password }),
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      email,
+      password,
+    }),
   });
+
   return response;
 };
 
-export const registerUser = async (name, email, password, confirmPassword) => {
+export const registerUser = async (
+  name,
+  email,
+  password,
+  confirmPassword
+) => {
   const response = await fetch(`${API_BASE_URL}/api/register/`, {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
+    headers: {
+      "Content-Type": "application/json",
+    },
     body: JSON.stringify({
       name,
       email,
@@ -109,6 +122,7 @@ export const registerUser = async (name, email, password, confirmPassword) => {
       confirm_password: confirmPassword,
     }),
   });
+
   return response;
 };
 
