@@ -16,21 +16,24 @@ ALLOWED_HOSTS = [
     "127.0.0.1",
     "localhost",
     "ai-resume-analyzer-backend-jjav.onrender.com",
+    "ai-resume-analyzer-backend-2shcsrwxu-rohit5harma.vercel.app",
     ".vercel.app",
 ]
 
 CORS_ALLOW_CREDENTIALS = True
 
-CORS_ALLOWED_ORIGINS = [
+CSRF_TRUSTED_ORIGINS = [
     "http://localhost:5173",
     "http://127.0.0.1:5173",
     "https://ai-resume-analyzer-xi-gray.vercel.app",
+    "https://ai-resume-analyzer-cyan-one.vercel.app",
 ]
 
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:5173",
     "http://127.0.0.1:5173",
     "https://ai-resume-analyzer-xi-gray.vercel.app",
+    "https://ai-resume-analyzer-cyan-one.vercel.app",
 ]
 
 INSTALLED_APPS = [
