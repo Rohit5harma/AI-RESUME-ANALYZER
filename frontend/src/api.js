@@ -1,4 +1,6 @@
-export const API_BASE_URL = import.meta.env?.VITE_API_URL || "http://127.0.0.1:8000";
+export const API_BASE_URL =
+  import.meta.env?.VITE_API_URL ||
+  "https://ai-resume-analyzer-backend-2shcsrwxu-rohit5harma.vercel.app";
 
 export const getCurrentUser = () => {
   try {
