@@ -16,9 +16,9 @@ ALLOWED_HOSTS = [
     "127.0.0.1",
     "localhost",
     "ai-resume-analyzer-backend-jjav.onrender.com",
-    "ai-resume-analyzer-backend-97orezgmg-rohit5harma.vercel.app",
+    ".vercel.app",
 ]
- 
+
 CORS_ALLOW_CREDENTIALS = True
 
 CORS_ALLOWED_ORIGINS = [
